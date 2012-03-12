@@ -1,0 +1,100 @@
+<html>
+		<head>
+			<title>localStorage example</title>
+			<style type="text/css">
+				html { 
+					font-family: Bookman;
+				}
+				body { 
+					margin: 0 auto;
+					width: 75%;
+				}
+				p {
+					margin: 0 40% 2em 0;
+
+				}
+				div {
+					border: 1px dotted #999;
+					float: right;
+					width: 38%;
+				}
+			</style>
+
+			<script type=text/javascript src=http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js></script>
+			<script type=text/javascript>
+				$(function() {
+					//Create an editable div for each paragraph.
+					$('p').before(
+						'<div contenteditable></div>'
+						);
+					$('div').each( function() {
+						myp = $(this).next('p');
+						$(this).height(myp.height());
+
+						//Give each div a unique data field 
+						//to identify it.
+						mynoteid = 'note_'+myp.attr('id');
+						$(this).attr('data-noteid', mynoteid);
+
+						//Repopulate the div with any data from
+						//it that's already in localStorage.
+						var thisval = 
+							localStorage.getItem(mynoteid) ?
+							localStorage.getItem(mynoteid) :
+							'';
+
+						$(this).html(thisval);
+					});
+
+					$('div').blur( function() {
+						//When we leave one of our editable divs,
+						//put its current value into localStorage.
+						localStorage.setItem(
+							$(this).attr('data-noteid'),
+							$(this).html()
+						);
+					});
+				});
+			</script>
+		</head>
+		
+		<body>
+			<h1>Pride and Prejudice</h1>
+			<h2>Chapter 1</h2>			
+
+			<p id=p1>It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</p>
+			<p id=p2>However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.</p>
+			<p id=p3>"My dear Mr. Bennet," said his lady to him one day, "have you heard that Netherfield Park is let at last?"</p>
+			<p id=p4>Mr. Bennet replied that he had not.</p>
+			<p id=p5>"But it is," returned she; "for Mrs. Long has just been here, and she told me all about it."</p>
+			<p id=p6>Mr. Bennet made no answer.</p>
+			<p id=p7>"Do you not want to know who has taken it?" cried his wife impatiently.</p>
+<p>"<em>You</em> want to tell me, and I have no objection to hearing it."</p>
+			<p id=p8>This was invitation enough.</p>
+			<p id=p9>"Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it, that he agreed with Mr. Morris immediately; that he is to take possession before Michaelmas, and some of his servants are to be in the house by the end of next week."</p>
+			<p id=p10>"What is his name?"</p>
+			<p id=p11>"Bingley."</p>
+			<p id=p12>"Is he married or single?"</p>
+			<p id=p13>"Oh! Single, my dear, to be sure! A single man of large fortune; four or five thousand a year. What a fine thing for our girls!"</p>
+			<p id=p14>"How so? How can it affect them?"</p>
+			<p id=p15>"My dear Mr. Bennet," replied his wife, "how can you be so tiresome! You must know that I am thinking of his marrying one of them."</p>
+			<p id=p16>"Is that his design in settling here?"</p>
+			<p id=p17>"Design! Nonsense, how can you talk so! But it is very likely that he <em>may</em> fall in love with one of them, and therefore you must visit him as soon as he comes."</p>
+			<p id=p18>"I see no occasion for that. You and the girls may go, or you may send them by themselves, which perhaps will be still better, for as you are as handsome as any of them, Mr. Bingley may like you the best of the party."</p>
+			<p id=p19>"My dear, you flatter me. I certainly <em>have</em> had my share of beauty, but I do not pretend to be anything extraordinary now. When a woman has five grown-up daughters, she ought to give over thinking of her own beauty."</p>
+			<p id=p20>"In such cases, a woman has not often much beauty to think of."</p>
+			<p id=p21>"But, my dear, you must indeed go and see Mr. Bingley when he comes into the neighbourhood."</p>
+			<p id=p22>"It is more than I engage for, I assure you."</p>
+			<p id=p23>"But consider your daughters. Only think what an establishment it would be for one of them. Sir William and Lady Lucas are determined to go, merely on that account, for in general, you know, they visit no newcomers. Indeed you must go, for it will be impossible for <em>us</em> to visit him if you do not."</p>
+			<p id=p24>"You are over-scrupulous, surely. I dare say Mr. Bingley will be very glad to see you; and I will send a few lines by you to assure him of my hearty consent to his marrying whichever he chooses of the girls; though I must throw in a good word for my little Lizzy."</p>
+			<p id=p25>"I desire you will do no such thing. Lizzy is not a bit better than the others; and I am sure she is not half so handsome as Jane, nor half so good-humoured as Lydia. But you are always giving <em>her</em> the preference."</p>
+			<p id=p26>"They have none of them much to recommend them," replied he; "they are all silly and ignorant like other girls; but Lizzy has something more of quickness than her sisters."</p>
+			<p id=p27>"Mr. Bennet, how <em>can</em> you abuse your own children in such a way? You take delight in vexing me. You have no compassion for my poor nerves."</p>
+			<p id=p28>"You mistake me, my dear. I have a high respect for your nerves. They are my old friends. I have heard you mention them with consideration these last twenty years at least."</p>
+			<p id=p29>"Ah, you do not know what I suffer."</p>
+			<p id=p30>"But I hope you will get over it, and live to see many young men of four thousand a year come into the neighbourhood."</p>
+			<p id=p31>"It will be no use to us, if twenty such should come, since you will not visit them."</p>
+			<p id=p32>"Depend upon it, my dear, that when there are twenty, I will visit them all."</p>
+			<p id=p33>Mr. Bennet was so odd a mixture of quick parts, sarcastic humour, reserve, and caprice, that the experience of three-and-twenty years had been insufficient to make his wife understand his character. <em>Her</em> mind was less difficult to develop. She was a woman of mean understanding, little information, and uncertain temper. When she was discontented, she fancied herself nervous. The business of her life was to get her daughters married; its solace was visiting and news.</p>
+		</body>
+</html>
