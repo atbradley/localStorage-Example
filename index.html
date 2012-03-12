@@ -6,7 +6,7 @@
 					font-family: Bookman;
 				}
 				body { 
-					margin: 0 auto;
+					margin: 1em auto 0;
 					width: 75%;
 				}
 				p {
@@ -17,6 +17,15 @@
 					border: 1px dotted #999;
 					float: right;
 					width: 38%;
+				}
+				div div {
+					border: none;
+					width: 100%;
+				}
+				section#info {
+					color: #666;
+					margin: 0 auto;
+					width: 70%;
 				}
 			</style>
 
@@ -60,6 +69,27 @@
 		
 		<body>
 			<h1>Pride and Prejudice</h1>
+
+			<section id=info>
+				This page is intended as a use example of HTML5's Web
+				Storage feature.<br />
+				<br />
+				Anything entered into the boxes on the right side of 
+				this page will be saved in your browser's 
+				<code>localStorage</code> and retrieved next time you
+				load the page.<br />
+				<br />
+				For more details, read the source for this page,
+				<a href=http://larryaronson.com/2010/editable-content-and-local-storage-in-html5/>Editable Content and Local Storage in HTML5</a>, 
+				<a href=http://blog.frankmtaylor.com/2012/01/23/html5-contenteditable-and-css/>HTML5 contenteditable and CSS</a>, or 
+				<a href=http://www.w3.org/TR/webstorage/>the W3C's current
+				Candidate Recommendation for Web Storage</a>.<br />
+				<br />
+				The rest of <i>Pride and Prejudice</i> can be downloaded
+				from <a href=http://www.gutenberg.org/ebooks/1342>Project
+				Gutenberg</a>.
+			</section>
+
 			<h2>Chapter 1</h2>			
 
 			<p id=p1>It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</p>
